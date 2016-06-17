@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type= "text/css">
+div#memory_board{
+	background:#CCC;
+	border:#ffe4c4 1px solid;
+	width:545px;
+	height:530px;
+	padding:24px;
+	margin:5px auto;
+}
+div#memory_board > div{
+	background: url(PandaBack.jpg) no-repeat;
+	width:121px;
+	height:121px;
+	float:left;
+	margin:5px;
+	padding:1px;
+	cursor:pointer;
+}
+
+#counter_id{
+	padding:0px 0px 0px 310px;
+	font-family: 'Lato', sans-serif;
+	font-size:30px;
+}
+#counter_text{
+	padding:0px 0px 0px 200px;
+	font-family: 'Lato', sans-serif;
+	font-size:20px;
+	
+}	
+</style>
+
+<script>
+var main_array = ['Imagens/Capetown1', 'Imagens/Brazil1','Imagens/Kyoto1', 'Imagens/Mokba1', 'Imagens/Island1', 'Imagens/Srilanka1', 'Imagens/Pasta2', 'Imagens/Sushi2', 'Imagens/Pasta1', 'Imagens/Sushi1', 'Imagens/Goicuon1', 'Imagens/Empanada' ];
+var memory_array;
+var memory_values = [];
+var memory_tile_ids = [];
+var tiles_flipped = 0;
+var tiles_number = 8;
+var counter = 0;
+
+Array.prototype.memory_tile_shuffle = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+
+function newBoard(){
+	
+	counter = 0;
+	document.getElementById("counter_id").innerHTML = counter;
+	memory_array = [];
+	main_array.memory_tile_shuffle();
+	for(var i = 0; i < tiles_number; i++) {
+		memory_array.push(main_array[i]);
+		memory_array.push(main_array[i]);
+	}
+	tiles_flipped = 0;
+	var output = '';
+    memory_array.memory_tile_shuffle();
+	for(var i = 0; i < memory_array.length; i++){
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+	}
+	document.getElementById('memory_board').innerHTML = output;
+}
+function memoryFlipTile(tile,val){
+	if(tile.innerHTML == "" && memory_values.length < 2){
+		tile.style.background = '#CCC';
+		tile.innerHTML = '<img src= "' + val + '.jpg">';
+		if(memory_values.length == 0){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+		} else if(memory_values.length == 1){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+			if(memory_values[0] == memory_values[1]){
+				counter += 1;
+				document.getElementById("counter_id").innerHTML = counter;
+				tiles_flipped += 2;
+				// Clear both arrays
+				memory_values = [];
+            	memory_tile_ids = [];
+				// Check to see if the whole board is cleared
+				if(tiles_flipped == memory_array.length){
+					counter += 1;
+					document.getElementById("counter_id").innerHTML = counter;
+					alert("Congratulations! \n You've matched all pictures in " + counter +" tries!");
+					document.getElementById('memory_board').innerHTML = "";
+					newBoard();
+				}
+			} else {
+				counter += 1;
+				document.getElementById("counter_id").innerHTML = counter;
+				function flip2Back(){
+				    // Flip the 2 tiles back over
+				    var tile_1 = document.getElementById(memory_tile_ids[0]);
+				    var tile_2 = document.getElementById(memory_tile_ids[1]);
+				    tile_1.style.background = 'url(PandaBack.jpg) no-repeat';
+            	    tile_1.innerHTML = "";
+				    tile_2.style.background = 'url(PandaBack.jpg) no-repeat';
+            	    tile_2.innerHTML = "";
+				    // Clear both arrays
+				    memory_values = [];
+            	    memory_tile_ids = [];
+				}
+				setTimeout(flip2Back, 700);
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+<p id = "counter_text">Amount of tries:<p id="counter_id"></p></span>
+</p>
+
+<div id="memory_board"></div>
+
+<script>newBoard();</script>
+
+</body>
+</html>
