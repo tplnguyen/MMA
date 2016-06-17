@@ -1,0 +1,437 @@
+html,button,input,.og-gird,a,textarea{font-family: 'thegirlnextdoor', sans-serif;}
+
+body
+  @font-face {
+    font-family: 'thegirlnextdoor';
+    src: url(thegirlnextdoor.eot);
+    src: url(thegirlnextdoor.woff) format('woff'),
+         url(thegirlnextdoor.eot?#iefix) format('embedded-opentype'),
+         url(thegirlnextdoor.ttf) format('truetype'),
+         url(thegirlnextdoor.svg) format('svg');
+  }
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+  font-family: 'thegirlnextdoor';
+}
+
+.button {
+    border: none;
+    background-color: #fff;
+    color: #000;
+    padding: 40px 0px 40px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+}
+
+button:hover {
+  color: #A9D0F5;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+    font-family: 'thegirlnextdoor';
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+body {
+    font-family: 'thegirlnextdoor';
+    background: #fff;
+    font-weight: 100;
+    font-size: 12px;
+    color: #333;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+a {
+	color: #555;
+	text-decoration: none;
+  font-family: 'thegirlnextdoor';
+}
+
+.container {
+	width: 100%;
+	position: relative;
+  font-family: 'thegirlnextdoor';
+}
+
+.container > header {
+	width: 90%;
+	max-width: 1240px;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 30px 50px 30px;
+  font-family: 'thegirlnextdoor';
+}
+
+.container > header {
+	padding: 60px 30px 50px;
+	text-align: center;
+  font-family: 'thegirlnextdoor';
+}
+
+.container > header h1 {
+	font-size: 28px;
+	line-height: 38px;
+	margin: 0 auto;
+	font-weight: 700;
+	color: #333;
+  font-family: 'thegirlnextdoor';
+}
+
+.container > header h1 span {
+	display: block;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.main > p {
+	text-align: center;
+	padding: 50px 20px;
+	font-family: 'thegirlnextdoor';
+	font-size: 14px;
+}
+
+a:hover {
+	background-color: #A9D0F5;
+	color: #fff;
+}
+
+/* Header Style */
+
+.codrops-top {
+	line-height: 24px;
+	font-size: 11px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.5);
+	text-transform: uppercase;
+	z-index: 9999;
+	position: relative;
+	box-shadow: 1px 0px 2px rgba(0,0,0,0.2);
+  font-family: 'thegirlnextdoor';
+}
+
+.codrops-top a {
+	padding: 0px 10px;
+	letter-spacing: 1px;
+	color: #333;
+	display: inline-block;
+  font-family: 'thegirlnextdoor';
+}
+
+.codrops-top a:hover {
+	background: rgba(255,255,255,0.8);
+	color: #000;
+}
+
+.codrops-top span.right {
+	float: right;
+}
+
+.codrops-top span.right a {
+	float: left;
+	display: block;
+}
+
+
+
+
+/* Components Style */
+
+.og-grid {
+	list-style: none;
+	padding: 20px 0;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+  font-family: 'thegirlnextdoor';
+}
+
+.og-grid li {
+	display: inline-block;
+	margin: 10px 5px 60px 5px;
+	vertical-align: top;
+	height: 150px;
+  font-family: 'thegirlnextdoor';
+}
+
+.og-grid li > a,
+.og-grid li > a img {
+	border: none;
+	outline: none;
+	display: block;
+	position: relative;
+  font-family: 'thegirlnextdoor';
+}
+
+.og-grid li.og-expanded > a::after {
+	top: auto;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: #EFF5FB;
+	border-width: 15px;
+	left: 50%;
+	margin: -20px 0 0 -15px;
+  font-family: 'thegirlnextdoor';
+}
+
+.og-expander {
+	position: absolute;
+	background: #EFF5FB; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#EFF5FB, #A9D0F5); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#EFF5FB, #A9D0F5); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#EFF5FB, #A9D0F5); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#EFF5FB, #A9D0F5); /* Standard syntax */
+	top: auto;
+	left: 0;
+	width: 100%;
+	margin-top: 10px;
+	text-align: left;
+	height: 0;
+	overflow: hidden;
+  font-family: 'thegirlnextdoor';
+}
+
+.og-expander-inner {
+	padding: 50px 30px;
+	height: 100%;
+}
+
+.og-close {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.og-close::before,
+.og-close::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	height: 1px;
+	background: #888;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+  font-family: 'thegirlnextdoor';
+}
+
+.og-close::after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+  font-family: 'thegirlnextdoor';
+}
+
+.og-close:hover::before,
+.og-close:hover::after {
+	background: #333;
+ font-family: 'thegirlnextdoor';
+}
+
+.og-fullimg,
+.og-details {
+	width: 50%;
+	float: left;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+  font-family: 'thegirlnextdoor';
+}
+
+.og-details {
+	padding: 0 40px 0 20px;
+}
+
+.og-fullimg {
+	text-align: center;
+}
+
+.og-fullimg img {
+	display: inline-block;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.og-details h3 {
+  font-family: 'thegirlnextdoor';
+  font-weight: 300;
+	font-size: 20px;
+	padding: 40px 0 10px;
+	margin-bottom: 10px;
+}
+
+.og-details p {
+  font-family: 'thegirlnextdoor';
+  font-weight: 250;
+	font-size: 18px;
+  line-height: 200%;
+	color: #000;
+}
+
+.og-details a {
+  font-family: 'thegirlnextdoor';
+  font-weight: 700;
+	font-size: 16px;
+  line-height: 200%;
+	color: #333;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 10px 20px;
+	border: 3px solid #333;
+	display: inline-block;
+	margin: 30px 0 0;
+	outline: none;
+}
+
+.og-details a::before {
+	content: '\2192';
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.og-details a:hover {
+	border-color: #999;
+	color: #999;
+}
+
+.og-loading {
+ font-family: 'thegirlnextdoor';
+  width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ddd;
+	box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ccc;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -25px 0 0 -25px;
+	-webkit-animation: loader 0.5s infinite ease-in-out both;
+	-moz-animation: loader 0.5s infinite ease-in-out both;
+	animation: loader 0.5s infinite ease-in-out both;
+}
+
+@-webkit-keyframes loader {
+	0% { background: #ddd; }
+	33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@-moz-keyframes loader {
+	0% { background: #ddd; }
+	33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@keyframes loader {
+	0% { background: #ddd; }
+	33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@media screen and (max-width: 830px) {
+
+	.og-expander h3 { font-size: 32px; }
+	.og-expander p { font-size: 13px; }
+	.og-expander a { font-size: 12px; }
+
+}
+
+@media screen and (max-width: 650px) {
+
+	.og-fullimg { display: none; }
+	.og-details { float: none; width: 100%; }
+
+}
+
+
+body
+.is-frontpage{background:#B40431}
+  a{-webkit-tap-highlight-color:rgba(255,255,255,0)}::-webkit-input-placeholder{color:#000}:-moz-placeholder{color:#000}
+  input[type="text"],input[type="password"],input[type="submit"],
+  textarea{-webkit-appearance:none;-webkit-border-radius:0px;outline:none}
+  select{-webkit-border-radius:0px;outline:none}
+  input:-webkit-autofill{-webkit-box-shadow:0 0 0px 1000px #fff inset}
+  input::-ms-clear{display:none}
+  textarea{resize:none;outline:none}
+
+  @font-face {
+    font-family: 'thegirlnextdoor';
+    src: url(thegirlnextdoor.eot);
+    src: url(thegirlnextdoor.woff) format('woff'),
+         url(thegirlnextdoor.eot?#iefix) format('embedded-opentype'),
+         url(thegirlnextdoor.ttf) format('truetype'),
+         url(thegirlnextdoor.svg) format('svg');
+    font-weight: normal;
+    font-size:1em;
+    font-style: normal;
+  }
+
+
+/*MORPH*/
+.morph {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;}
+
+.morph:hover {
+  border-radius: 50%;
+  -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);}
+
+/*BLUR*/
+.blur img {
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;}
+
+.blur img:hover {
+  -webkit-filter: blur(5px);}
+
+/*TILT*/
+.tilt {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;}
+
+.tilt:hover {
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);}
